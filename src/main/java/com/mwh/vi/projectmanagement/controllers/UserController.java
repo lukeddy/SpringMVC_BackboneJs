@@ -34,8 +34,6 @@ public class UserController {
 
 	@Resource(name = "userService")
 	private UserService userService;
-
-	
 	
 	@RequestMapping(value="/register",method = RequestMethod.PUT, headers = "Accept=application/json")
 	public @ResponseBody
