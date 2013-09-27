@@ -19,7 +19,7 @@
 		<commons-io>2.4</commons-io>
 	</properties>
 	<dependencies>
-		<!-- Spring -->
+		<!-- Spring Context -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
@@ -32,6 +32,8 @@
 				 </exclusion>
 			</exclusions>
 		</dependency>
+		
+		<!-- Spring Web MVC -->	
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -51,6 +53,8 @@
 			<artifactId>slf4j-api</artifactId>
 			<version>${org.slf4j-version}</version>
 		</dependency>
+		
+		<!-- SFL4J -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>jcl-over-slf4j</artifactId>
@@ -63,6 +67,8 @@
 			<version>${org.slf4j-version}</version>
 			<scope>runtime</scope>
 		</dependency>
+		
+		<!-- Spring Log4j -->
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
@@ -167,11 +173,7 @@
 			<groupId>org.codehaus.jackson</groupId>
 			<version>${jackson-mapper-asl.version}</version>
 		</dependency>       
-		
-		
-		
-		
-		     
+
 	</dependencies>
     <build>
         <plugins>
