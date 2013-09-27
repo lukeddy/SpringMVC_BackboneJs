@@ -1,0 +1,14 @@
+# Create a ~/.gitignore in your user directory
+cd ~/
+touch .gitignore
+
+# Exclude bin and .metadata directories
+echo "bin" >> .gitignore
+echo ".metadata" >> .gitignore
+echo "*~" >> .gitignore
+echo "target/" >> .gitignore
+
+# Configure Git to use this file
+# as global .gitignore
+
+git config --global core.excludesfile ~/.gitignore 
