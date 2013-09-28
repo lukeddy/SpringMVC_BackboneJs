@@ -156,7 +156,7 @@ public class UserService {
 	 */
 	public boolean isValidUser(String userName, String password) throws ValidationException {
 		User user = userRepository.findByUserName(userName);
-		checkVerified(user);
+		//checkVerified(user);
 		
 		if(user != null && !user.getPassword().equals(password)){
 			throw new ValidationException("The username or password you entered is incorrect.");

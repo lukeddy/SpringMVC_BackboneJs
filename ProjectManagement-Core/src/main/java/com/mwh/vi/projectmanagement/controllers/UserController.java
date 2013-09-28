@@ -60,14 +60,13 @@ public class UserController {
 	 * Accepts the login credentials and validates the user for login
 	 * 
 	 */
-	@RequestMapping(value = "/login", method = RequestMethod.POST, headers = "Accept=application/xml, application/json")
+	@RequestMapping(value = "/login", method = RequestMethod.POST, headers = "Accept=application/json")
 	public @ResponseBody
-	Result login(@RequestParam("userName") String userName,
-			@RequestParam("password") String password, @RequestParam("flag") int flag) {
+	Result login(@RequestParam("userName") String userName,@RequestParam("password") String password) {
 
 		logger.debug("Request to login userName " + userName + " and password "
 				+ password);
-		Result result = new com.mwh.vi.projectmanagement.models.Result();
+		Result result = new Result();
 		User user = new User();
 		Map<String, Object> data = new HashMap<String, Object>();
 
@@ -76,12 +75,6 @@ public class UserController {
 				user = userService.getUserTokenDTO(userName);
 				UserTokenDTO userTokenDTO = new UserTokenDTO(new UserDTO(user),
 						userService.generateToken(userName, password));
-
-				if (flag==0) {
-					data.put("firstLogin", false);
-				} else {
-					data.put("firstLogin", true);
-				}
 
 				data.put("userTokenDTO", userTokenDTO);
 				result.setSuccess(true);
