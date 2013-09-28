@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script type="text/javascript">	
+	/* 
+	 * Checking cookie 
+	 * */
+
+	 function getCookie(c_name) {
+		var i, x, y, ARRcookies = document.cookie.split(";");
+		for (i = 0; i < ARRcookies.length; i++) {
+			x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
+			y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
+			x = x.replace(/^\s+|\s+$/g, "");
+			if (x == c_name) {
+				return unescape(y);
+			}
+		}
+	}
+
+	var authToken = getCookie("auth-token");	
+	if (!(authToken == null || authToken == "")) {
+		document.location.href= "index.html";
+	}
+	 
+	</script>
+	<script data-main="resources/js/login" src="resources/js/libs/require/require.js"></script>	
+	<link rel="stylesheet" href="resources/css/everylog.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+	<link rel="stylesheet" href="resources/css/south-street/jquery-ui-1.8.21.custom.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+	<link rel="stylesheet" href="resources/css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
+	<link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.ico">
+	<link rel="image_src" href="resources/images/logo_for_fb.png" />
+			
+	<title>ProjectManagement</title>
+</head><!-- onload="getLoginStatus();"  -->
+<body class="home_back" onload="getLoginStatus();" >
+	<div class="wrapper">
+		
+		<!-- header -->
+		
+		<div class="home_header">
+			<div class="homepage_width">
+				
+				<div class="">
+					<div class="landing_logo left"></div>
+					
+					<div class="login right">
+						<form id="signinForm" onSubmit="return false;">
+							<table>
+								<tbody>
+									<tr>
+										<td><label class="show_hide">Email</label><input type="text" id="username" class="user_name" name="username"/></td>
+										<td><label class="show_hide">Password</label><input type="password" id="password" class="password" name="password"/></td>
+										<td><button class="signin_button">Log In</button></td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" id="keepMeAlive"/><label for="keepMeAlive">Keep Me Logged In</label></td>
+										<td><label id="forgotPassword">Forgot My Password</label></td>
+										<td></td>
+									</tr>									
+								</tbody>
+							</table>
+						</form>
+						<div class="clearfix"></div>
+					</div>
+					
+					<div class="clearfix"></div>
+					
+				</div>
+			
+			</div>
+		</div>
+		
+		<!-- header ends -->
+		<!-- home page body start -->
+		<div class="white_box">
+			<div class="homepage_width">
+					
+					<div class="home_upper">
+						<div class="reg_form right">
+							<div class="right fb_login">
+							<a href="#" onclick="fb_login();">
+							<img src="resources/images/fb_button_home.png" title="log in with facebook" style="border:0px;"/>
+							</a>
+							</div>
+							<h1 class="left">New to Everylog?</h1>
+							<div class="clearfix"></div>
+							<form id="signupForm" onSubmit="return false;">
+								<table class="form_table">
+									<tbody>
+										<tr>
+											<td colspan="4"><label class="show_hide">First Name</label><input type="text" class="small_field right10" name="firstName" /><label class="show_hide">Last Name</label><input type="text" class="small_field right" name="lastName"/></td>
+										</tr>
+										<tr>
+											<td colspan="4"><label class="show_hide">Email</label><input type="text" class="large_field" name="emailAddress"/></td>
+										</tr>
+										<tr>
+											<td colspan="4"><label class="show_hide">Re-Enter Email</label><input type="text" class="large_field" name="confEmailAddress"/></td>
+										</tr>
+										<tr>
+											<td colspan="4"><label class="show_hide">Password</label><input id="pwd" type="password" class="large_field" name="password"/></td>
+										</tr>
+										<tr>
+											<td colspan="4"><label class="show_hide">Zipcode</label><input type="text" class="small_field" name="zipCode"/>												
+												<input id="female_option" type="checkbox" class="checkbox" name="gender" value="FEMALE"/><label for="female_option">Female</label>
+												<input id="male_option" type="checkbox" class="checkbox" name="gender" value="MALE"/><label for="male_option">Male</label>												
+											</td>
+										</tr>
+										
+										<tr class="birthday">
+										<td><label>Birthday:</label></td>
+											<td >
+												<select name="month" id="selectedMonth">
+													 <option selected="selected" value="-1">Month</option> 
+													 <option value="1">Jan</option>
+													 <option value="2">Feb</option>
+													 <option value="3">Mar</option>
+													 <option value="4">Apr</option>
+													 <option value="5">May</option>
+													 <option value="6">Jun</option>
+													 <option value="7">Jul</option>
+													 <option value="8">Aug</option>
+													 <option value="9">Sep</option>
+													 <option value="10">Oct</option>
+													 <option value="11">Nov</option>
+													 <option value="12">Dec</option>
+												</select>
+											</td>	
+											<td class="" >	
+												<select name="day" id="selectedDay">
+													<option selected="selected" value="-1">Day</option>
+												</select>
+											</td>
+											<td class="">
+												<select name="year" id="selectedYear">
+													<option selected="selected" value="-1">Year</option>
+												</select>
+												<input type="hidden" id="date_dropDown" name="birthday"/>
+											</td>
+										</tr>
+										
+										<tr>
+											<td colspan="4">
+												<div class="signup_button right">Sign Up</div>
+												<br />
+												<label>By clicking Sign Up, <br/>you agree to our <a id="terms_link_signup" href="#">Terms</a></label>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								
+							</form>	
+						</div>
+					</div>
+				<div class="clearfix"></div>
+						
+			</div>
+		
+		</div>
+		
+
+		
+		
+		
+		 <div id="liveLogFeedContainer" class="home_feed homepage_width">			
+			<div class="feed_list"></div>
+		</div>
+		<!-- home page body ends -->
+		
+		<div class="footer pagewidth">
+			<div class="footer_content">
+				<div class="left">© Alternate Universe LLC
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="http://www.linkedin.com/company/2757970" target="http://www.linkedin.com/company/2757970"><img style="vertical-align:middle" border="0" src="http://www.everylog.com/EveryLog/resources/images/ico_linkedin.png" alt=""></a>
+				&nbsp;&nbsp;
+				<a href="http://www.facebook.com/Everylog" target="http://www.facebook.com/Everylog"><img style="vertical-align:middle" border="0" src="http://www.everylog.com/EveryLog/resources/images/ico_fb.png" alt=""></a>
+				&nbsp;&nbsp;
+				<a href="https://twitter.com/TheEverylog" target="https://twitter.com/TheEverylog"><img style="vertical-align:middle" border="0" src="http://www.everylog.com/EveryLog/resources/images/ico_twitter.png" alt=""></a></div>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+								<span id="footer_link_questions">Questions</span>
+				&nbsp;&nbsp;|&nbsp;&nbsp;
+				<span id="footer_link_terms">Terms</span>
+				&nbsp;&nbsp;|&nbsp;&nbsp;
+				<span id="footer_link_attribution">Attribution</span>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		
+		
+		
+	</div>
+	
+</body>
+<script type="text/javascript" src="resources/js/projectManagementCommon.js"></script>
