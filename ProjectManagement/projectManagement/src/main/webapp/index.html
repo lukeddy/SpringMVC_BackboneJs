@@ -1,64 +1,289 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
-          <title>ProjectManagement</title>
-
-        <link href="resources/css/bootstrap.css" rel="stylesheet">
-        
-	        <!-- Loading Flat UI -->
-	    <link href="resources/css/flat-ui.css" rel="stylesheet">
-	    <link href="resources/css/docs.css" rel="stylesheet">
-		<link href="resources/css/custom.css" rel="stylesheet">
-		<script data-main="resources/js/login" src="resources/js/lib/require/require.js"></script>	
-        <!--[if lt IE 9]>
-        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-    </head>
-
-    <body>
-	<div class="container-fluid" id="container">
-
-		<div class="login">
-			<div class="login-screen">
-				
-				<div class="login-icon">
-					<img src="resources/images/icons/png/pm.png" alt="Welcome to Mail App" />
-					<h4>
-					<small>Smart Sheet App</small>
-					</h4>
-				</div>
-
-				<div class="login-form">
-				<form id="signinForm">
-					<div class="form-group">
-					<input type="text" class="form-control login-field" value="" placeholder="User name" id="username" /> 
-							<label class="login-field-icon fui-user" for="login-name"></label>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script type="text/javascript">
+	/* 
+	 * Checking cookie 
+	 * 
+	 * */
+	 function getCookie(c_name) {
+		var i, x, y, ARRcookies = document.cookie.split(";");
+		for (i = 0; i < ARRcookies.length; i++) {
+			x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
+			y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
+			x = x.replace(/^\s+|\s+$/g, "");
+			if (x == c_name) {
+				return unescape(y);
+			}
+		}
+	}
+	 
+	var authToken = getCookie("auth-token");	
+	if (authToken == null || authToken == "") {				
+		document.location.href = "login.html";		
+	} 
+	
+	</script>
+	<link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.ico">
+	<script data-main="resources/js/index" src="resources/js/libs/require/require.js"></script>
+	
+	<link rel="stylesheet" href="resources/css/south-street/jquery-ui-1.8.21.custom.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+	<link rel="stylesheet" href="resources/css/everylog.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+	
+	<link rel="stylesheet" href="resources/css/jquery.multiSelect.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+	<link rel="stylesheet" href="resources/css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
+	
+	<title>ProjectManagement</title>
+</head>
+<body>
+	<div class="wrapper gray_back">
+		
+		<!-- header -->
+		
+		<div class="header">
+			<div class="pagewidth">
+				<div id="welcome">
+					<div id="st1">
+						<div class="welcome_button_holder">
+							<div class="welcome_button welcome_close_btn">Close</div>
+							<span class="welcome_next_btn">Next</span>
+						</div>
+						<img src="resources/images/welcome_1.png"  class="welcome_image" usemap="#welcome_1"/>
 					</div>
-
-					<div class="form-group">
-					<input type="password" class="form-control login-field" value="" placeholder="Password" id="password" /> 
-						<label class="login-field-icon fui-lock" for="login-pass"></label>
+					
+					<div id="st2">
+						<div class="welcome_button_holder">
+							<div class="welcome_button welcome_close_btn">Close</div>
+							<span class="welcome_back_btn">Back</span>
+						</div>
+						<img src="resources/images/welcome_2.png"  class="welcome_image" usemap="#welcome_2" />
 					</div>
-
-					<a class="btn btn-primary btn-lg btn-block" id ="signin_button" href="#">Login</a> 
-					 <a	class="login-link"  id ="forgotPassword" href="#">Lost your password?</a>
-				 </form>
 				</div>
 				
+				<div class="header">
+					<a href="#myHome" class="logo left"></a>
+					<div id="main_tabs" class="mainnav left">
+
+					</div>
+					
+					<div class="right_nav right">
+						<div class="menu_arrow right" id="drop_arrow"></div>
+						<div class="right"><a href="#myHome" id="username" class="username">&nbsp;</a> </div>
+						<div class="avtar right user_image_top_panel" id="avtar_popup">
+							<img src="resources/images/img_male.png" style="width:40px;"/>
+						</div>
+						
+						
+						<div class="logout_dropdown" style="display:none;">							
+							<a id="settings" href="#settings" class="logout_link">Profile & Settings</a>
+							<a id="logout" href="#logout" class="logout_link">Logout</a>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					
+					<div class="clearfix"></div>
+					
+				</div>
+			
 			</div>
 		</div>
-
-
-
+		
+		<!-- header ends -->
+		
+		<div class="pagecontent pagewidth">
+			
+			<div class="leftcol left">
+				<div class="avtar_left" id="miniProfile">
+					<img src="resources/images/img_male.png" alt="" />
+					<div class="name" id="profileName">&nbsp;</div>
+					
+					<table class="score" cellspacing="0">
+						<tbody>
+							<tr>
+								<td>Logs Created</td>
+								<td class="value">&nbsp;</td>
+							</tr>
+							<tr>
+								<td>Logs Joined</td>
+								<td class="value">&nbsp;</td>
+							</tr>
+							<tr>
+								<td>Log Entries</td>
+								<td class="value">&nbsp;</td>
+							</tr>
+						</tbody>
+					</table> 
+				</div>
+			
+				<div id="searchbox" style="display:none">
+					<label id="search_label">Search</label>
+					 <div class="arrow_toggle"></div>  
+					<form >
+						<input type="text" id="search" />
+						
+						<div id="tag_select">
+							<ul>
+								<li><span class="chk_box"></span>Logs<div class="ico tagico_logs">&nbsp;</div></li>
+								<li><span class="chk_box"></span>Competilogs<div class="ico tagico_competilogs">&nbsp;</div></li>
+								<li><span class="chk_box"></span>Teamlogs<div class="ico tagico_teamlogs">&nbsp;</div></li>
+								<li><span class="chk_box"></span>Private<div class="ico tagico_privatelogs">&nbsp;</div></li>
+								<li><span class="chk_box"></span>Public<div class="ico tagico_publiclogs">&nbsp;</div></li>
+								<li><span class="chk_box"></span>Favorite<div class="ico tagico_favoritelogs">&nbsp;</div></li>
+							</ul>
+						</div>
+						
+					</form>
+				</div>
+				
+				<div id="main_filter_wrapper">
+					<div id="log_filters" class="filter_left">
+						<label class="main_search_label">Search</label>
+						<input type="text" id="log_search" class="main_search_inputs"/>
+						<ul>
+							<li class="title">Logs:</li>
+							<li id="filter_all_logs" class="select">ALL</li>
+							<li id="filter_fav_logs" class="favorite"></li>
+						</ul>
+					</div>
+					
+					<div id="logFeed_filters" class="filter_left" style="display: none;">
+						<label class="main_search_label">Search</label>
+						<input type="text" id="logfeed_search" class="main_search_inputs"/>
+						<ul>
+							<li class="title">Logfeed:</li>
+							<li id="filter_all_logfeed" class="select">ALL</li>
+							<li id="filter_fav_logfeed" class="favorite"></li>
+						</ul>
+					</div>
+					
+					<div id="logger_filters" class="filter_left" style="display: none;">
+						<label class="main_search_label">Search</label>
+						<input type="text" id="logger_search" class="main_search_inputs"/>
+						<ul>
+							<li class="title">Loggers:</li>
+							<li id="filter_all_loggers" class="select">ALL</li>
+							<li id="filter_fav_loggers" class="favorite"></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			<div class="midcol left">
+				<div id="logs_container">
+					<div id="log_loading_mask" class="loading" style="display:none;">Loading...</div>
+					<div class="loglist">&nbsp;</div>
+				</div>
+				<div id="results_container">
+					<div id="result_loading_mask" class="loading" style="display:none;">Loading...</div>
+<!-- 					<div class="log_results ">&nbsp;</div> -->
+					<div class="log_feed_list">&nbsp;</div>
+					
+				</div>
+				<div id="loggers_container">
+					<div id="loggers_loading_mask" class="loading" style="display:none;">Loading...</div>
+					<div class="loggers_list">&nbsp;</div>
+				</div>
+				
+				<div class="inner_page_footer" style="display:none;">
+					<div class="left">© Alternate Universe LLC
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="http://www.linkedin.com/company/2757970" target="http://www.linkedin.com/company/2757970"><img style="vertical-align:middle" border="0" src="http://www.everylog.com/EveryLog/resources/images/ico_linkedin.png" alt=""></a>
+					&nbsp;&nbsp;
+					<a href="http://www.facebook.com/Everylog" target="http://www.facebook.com/Everylog"><img style="vertical-align:middle" border="0" src="http://www.everylog.com/EveryLog/resources/images/ico_fb.png" alt=""></a>
+					&nbsp;&nbsp;
+					<a href="https://twitter.com/TheEverylog" target="https://twitter.com/TheEverylog"><img style="vertical-align:middle" border="0" src="http://www.everylog.com/EveryLog/resources/images/ico_twitter.png" alt=""></a></div>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<div class="right">
+						<span id="footer_link_questions">Questions</span>
+						&nbsp;&nbsp;|&nbsp;&nbsp;
+						<span id="footer_link_feedback">Feedback</span>
+						&nbsp;&nbsp;|&nbsp;&nbsp;
+						<span id="footer_link_terms">Terms</span>
+						&nbsp;&nbsp;|&nbsp;&nbsp;
+						<span id="footer_link_attribution">Attribution</span>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			
+			
+			<div class="rightcol left">
+				<div class="newlog">
+					<div class="newlog_button" id="new_log_btn">Create a Log</div>
+				</div>
+				<div class="ads">
+<!-- 					<img src="resources/images/skyscr_140.png" /> -->
+				</div>
+			</div>
+			
+			<div class="clearfix"></div>
+					
+		</div>
+		<!-- page content end -->
+		
+<!-- 		<div class="footer pagewidth"> -->
+<!-- 			<div class="footer_content">Copyright © Everylog Inc. 2012-13, All rights reserved. Privacy Policy&nbsp;&nbsp;|&nbsp;&nbsp;  Terms and Condition </div> -->
+<!-- 		</div> -->
 
 	</div>
 
-	<!-- Placed at the end of the document so the pages would load faster -->
-        <script type="text/javascript" src="resources/js/projectManagementCommon.js"></script>
-    </body>
-</html>
+
+	<div id="newlog_lightbox"></div>
+	
+	<div id="log_detail"> </div>
+	
+	<div id="user_miniprofile"></div>
+	<div id="update_userinfo"></div>
+	<div id="profile_photo_dialog"></div>
+	<div id="el_image_upload_dialog"></div>
+	
+	<div id="log_action_grid" class="action_grid_wrapper"> </div>
+	<div id="log_result_action_grid" class="action_grid_wrapper"> </div>
+	<div id="loggers_action_grid" class="action_grid_wrapper"> </div>
+	<div id="error_message" class="error_message act_grid_confirm" style="display:none;">
+		<div class="ico_quit"></div>
+		<div class="clearfix"></div>
+		
+		<div class="icon_holder" style="background-color:transparent;">
+			<img id="image" src="resources/images/ico_error.png" width="46">
+		</div>
+		
+		<div id="msg" class="dump message"></div>
+		
+		<div class="done_btn_holder">
+			<div class="btn_done ok">OK</div>
+		</div>
+				
+		<div class="clearfix"></div>
+	</div>
+	
+	<div id="footer_link_questions_dialog"></div>
+	<div id="footer_link_feedback_dialog"></div>
+	<div id="footer_link_terms_dialog"></div>
+	<div id="footer_link_attribution_dialog"></div>
+	
+<div id="fb-root"></div>
+<script type="text/javascript" src="resources/js/everyLogCommon.js"></script>
+<script type="text/javascript">
+	setLoggedInUserName();
+	
+	window.fbAsyncInit = function(){
+		FB.init({
+			appId 	: FB_APP_ID,
+			cookie	: true,
+			status	: true,
+			xfbml	: true			
+		});
+	};
+
+	(function(){
+		var e   = document.createElement('script');
+		e.type  = 'text/javascript';
+		e.src   = 'http://connect.facebook.net/en_US/all.js';
+		e.async = true;
+		document.getElementById('fb-root').appendChild(e);
+	}());	
+</script>
+</body>
