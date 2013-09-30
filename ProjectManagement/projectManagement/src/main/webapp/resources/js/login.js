@@ -22,36 +22,6 @@ require(['jquery','order!jqueryui', 'order!jquerycookie', 'order!validator', 'or
          
 		function($,ui, cookie, validator, jquerydateDropDowns,
 				Rotator, jqueryMouseWheel, jqueryCustomScroll, projectManagementCommon) {
-		
-		// Image Rotator 
-		$('#slides').slides({
-			preload: true,
-			preloadImage: 'img/loading.gif',
-			play: 5000,
-			pause: 2500,
-			hoverPause: true,
-			effect: 'fade',
-			animationStart: function(current){
-				$('.caption').animate({
-					/*bottom:-35*/
-				},100);
-				if (window.console && console.log) {
-				};
-			},
-			animationComplete: function(current){
-//				$('.caption').animate({
-//					bottom:0
-//				},200);
-				/*$('.caption').fadeIn('slow');*/
-				if (window.console && console.log) {
-				};
-			},
-			slidesLoaded: function() {
-				$('.caption').animate({
-					bottom:0
-				},200);
-			}
-		});	
 	 	
 		//Toggle form label text
 	 	$(".form_table input[type=text], .form_table input[type=password], .login input[type=text], .login input[type=password]").focus(function(){

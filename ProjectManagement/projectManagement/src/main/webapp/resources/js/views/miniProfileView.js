@@ -1,4 +1,5 @@
-define([ 'jquery', 'underscore', 'backbone', 'views/userDetailsView', 'models/miniProfile', 'text!templates/miniProfileTpl.html' ],
+define([ 'jquery', 'underscore', 'backbone', 'views/userDetailsView', 'models/miniProfile', 
+         'text!templates/miniProfileTpl.html' ],
 	function($, _, Backbone, UserDetailsView, MiniProfileModel, profileTemplate) {
 		var MiniProfileView = Backbone.View.extend({
 			tagName : 'div',

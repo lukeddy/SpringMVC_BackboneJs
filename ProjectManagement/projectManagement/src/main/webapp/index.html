@@ -25,13 +25,9 @@
 	
 	</script>
 	<link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.ico">
-	<script data-main="resources/js/index" src="resources/js/libs/require/require.js"></script>
-	
-	<link rel="stylesheet" href="resources/css/south-street/jquery-ui-1.8.21.custom.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
-	<link rel="stylesheet" href="resources/css/everylog.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
-	
-	<link rel="stylesheet" href="resources/css/jquery.multiSelect.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
-	<link rel="stylesheet" href="resources/css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
+	<script data-main="resources/js/index" src="resources/js/lib/require/require.js"></script>
+	<link rel="stylesheet" href="resources/css/custom.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+
 	
 	<title>ProjectManagement</title>
 </head>
@@ -48,7 +44,7 @@
 							<div class="welcome_button welcome_close_btn">Close</div>
 							<span class="welcome_next_btn">Next</span>
 						</div>
-						<img src="resources/images/welcome_1.png"  class="welcome_image" usemap="#welcome_1"/>
+						<img src="#"  class="welcome_image" usemap="#welcome_1"/>
 					</div>
 					
 					<div id="st2">
@@ -56,7 +52,7 @@
 							<div class="welcome_button welcome_close_btn">Close</div>
 							<span class="welcome_back_btn">Back</span>
 						</div>
-						<img src="resources/images/welcome_2.png"  class="welcome_image" usemap="#welcome_2" />
+						<img src="#"  class="welcome_image" usemap="#welcome_2" />
 					</div>
 				</div>
 				
@@ -70,7 +66,7 @@
 						<div class="menu_arrow right" id="drop_arrow"></div>
 						<div class="right"><a href="#myHome" id="username" class="username">&nbsp;</a> </div>
 						<div class="avtar right user_image_top_panel" id="avtar_popup">
-							<img src="resources/images/img_male.png" style="width:40px;"/>
+							<img src="#" style="width:40px;"/>
 						</div>
 						
 						
@@ -94,7 +90,7 @@
 			
 			<div class="leftcol left">
 				<div class="avtar_left" id="miniProfile">
-					<img src="resources/images/img_male.png" alt="" />
+					<img src="#" alt="" />
 					<div class="name" id="profileName">&nbsp;</div>
 					
 					<table class="score" cellspacing="0">
@@ -187,25 +183,6 @@
 				</div>
 				
 				<div class="inner_page_footer" style="display:none;">
-					<div class="left">© Alternate Universe LLC
-					&nbsp;&nbsp;&nbsp;&nbsp;
-					<a href="http://www.linkedin.com/company/2757970" target="http://www.linkedin.com/company/2757970"><img style="vertical-align:middle" border="0" src="http://www.everylog.com/EveryLog/resources/images/ico_linkedin.png" alt=""></a>
-					&nbsp;&nbsp;
-					<a href="http://www.facebook.com/Everylog" target="http://www.facebook.com/Everylog"><img style="vertical-align:middle" border="0" src="http://www.everylog.com/EveryLog/resources/images/ico_fb.png" alt=""></a>
-					&nbsp;&nbsp;
-					<a href="https://twitter.com/TheEverylog" target="https://twitter.com/TheEverylog"><img style="vertical-align:middle" border="0" src="http://www.everylog.com/EveryLog/resources/images/ico_twitter.png" alt=""></a></div>
-					&nbsp;&nbsp;&nbsp;&nbsp;
-					<div class="right">
-						<span id="footer_link_questions">Questions</span>
-						&nbsp;&nbsp;|&nbsp;&nbsp;
-						<span id="footer_link_feedback">Feedback</span>
-						&nbsp;&nbsp;|&nbsp;&nbsp;
-						<span id="footer_link_terms">Terms</span>
-						&nbsp;&nbsp;|&nbsp;&nbsp;
-						<span id="footer_link_attribution">Attribution</span>
-					</div>
-					<div class="clearfix"></div>
-				</div>
 			</div>
 			
 			
@@ -224,7 +201,7 @@
 		<!-- page content end -->
 		
 <!-- 		<div class="footer pagewidth"> -->
-<!-- 			<div class="footer_content">Copyright © Everylog Inc. 2012-13, All rights reserved. Privacy Policy&nbsp;&nbsp;|&nbsp;&nbsp;  Terms and Condition </div> -->
+<!-- 			<div class="footer_content">Copyright ï¿½ Everylog Inc. 2012-13, All rights reserved. Privacy Policy&nbsp;&nbsp;|&nbsp;&nbsp;  Terms and Condition </div> -->
 <!-- 		</div> -->
 
 	</div>
@@ -247,7 +224,7 @@
 		<div class="clearfix"></div>
 		
 		<div class="icon_holder" style="background-color:transparent;">
-			<img id="image" src="resources/images/ico_error.png" width="46">
+			<img id="image" src="#" width="46">
 		</div>
 		
 		<div id="msg" class="dump message"></div>
@@ -265,25 +242,5 @@
 	<div id="footer_link_attribution_dialog"></div>
 	
 <div id="fb-root"></div>
-<script type="text/javascript" src="resources/js/everyLogCommon.js"></script>
-<script type="text/javascript">
-	setLoggedInUserName();
-	
-	window.fbAsyncInit = function(){
-		FB.init({
-			appId 	: FB_APP_ID,
-			cookie	: true,
-			status	: true,
-			xfbml	: true			
-		});
-	};
-
-	(function(){
-		var e   = document.createElement('script');
-		e.type  = 'text/javascript';
-		e.src   = 'http://connect.facebook.net/en_US/all.js';
-		e.async = true;
-		document.getElementById('fb-root').appendChild(e);
-	}());	
-</script>
+<script type="text/javascript" src="resources/js/projectManagementCommon.js"></script>
 </body>
