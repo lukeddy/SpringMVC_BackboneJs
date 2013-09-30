@@ -14,6 +14,28 @@
     <link href="resources/css/bootstrap.css" rel="stylesheet">
     <link href="resources/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="resources/css/custom.css" rel="stylesheet">
+     <script type="text/javascript">	
+		/* 
+		 * Checking cookie 
+		 * */
+	
+		 function getCookie(c_name) {
+			var i, x, y, ARRcookies = document.cookie.split(";");
+			for (i = 0; i < ARRcookies.length; i++) {
+				x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
+				y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
+				x = x.replace(/^\s+|\s+$/g, "");
+				if (x == c_name) {
+					return unescape(y);
+				}
+			}
+		}
+	
+		var authToken = getCookie("auth-token");	
+		if (authToken == null || authToken == "") {
+			document.location.href= "login.html";
+		}
+	</script>
 
 </head>
 

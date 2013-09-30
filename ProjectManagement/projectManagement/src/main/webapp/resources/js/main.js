@@ -10,7 +10,6 @@ window.Router = Backbone.Router.extend({
         this.headerView = new HeaderView();
         $('.header').html(this.headerView.render().el);
 
-        // Close the search dropdown on click anywhere in the UI
         $('body').click(function () {
             $('.dropdown').removeClass("open");
         });
@@ -22,7 +21,7 @@ window.Router = Backbone.Router.extend({
             this.homeView = new HomeView();
             this.homeView.render();
         } else {
-            this.homeView.delegateEvents(); // delegate events when the view is recycled
+            this.homeView.delegateEvents(); // Using delegateEvents provides a number of advantages. See backbonejs 
         }
         $("#content").html(this.homeView.el);
         this.headerView.select('home-menu');
