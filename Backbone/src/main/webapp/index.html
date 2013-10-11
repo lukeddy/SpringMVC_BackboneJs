@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>RESThub Backbone JS TEst</title>
+
+    <link href="resources/css/bootstrap.css" rel="stylesheet" />
+    <link href="resources/css/style.css" rel="stylesheet"  />
+    <link href="resources/css/bootstrap-responsive.css" rel="stylesheet"  />
+    <script src="resources/css/bootstrap.js"></script>
+    <script type="text/javascript">
+	/* 
+	 * Checking cookie 
+	 * 
+	 * */
+	 function getCookie(c_name) {
+		var i, x, y, ARRcookies = document.cookie.split(";");
+		for (i = 0; i < ARRcookies.length; i++) {
+			x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
+			y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
+			x = x.replace(/^\s+|\s+$/g, "");
+			if (x == c_name) {
+				return unescape(y);
+			}
+		}
+	}
+	 
+	var authToken = getCookie("auth-token");	
+	if (authToken == null || authToken == "") {				
+		document.location.href = "login.html";		
+	} 
+	
+	</script>
+
+    <script data-main="resources/js/main" src="resources/js/lib/require.js"></script>
+  </head>
+
+  <body>
+    <div class="navbar navbar-static-top navbar-inverse">
+      <div class="navbar-inner">
+        <a class="brand" href="#">RESThub Backbone JS</a>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="row">
+        <div id="tasks" class="span12">
+        </div>
+      </div>
+    </div>
+
+<script type="text/javascript" src="resources/js/projectManagementCommon.js"></script>
+  </body>
+</html>
