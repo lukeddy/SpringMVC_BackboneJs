@@ -19,6 +19,7 @@ define(['backbone', 'resthub', 'hbs!template/task-form', 'backbone-validation'],
       return false;
     },
     cancel: function() {
+      this.model.destroy();
       this.model.trigger('change');
     },
     
