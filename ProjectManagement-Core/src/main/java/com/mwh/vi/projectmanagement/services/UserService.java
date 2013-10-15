@@ -214,6 +214,7 @@ public class UserService {
 	
 		
 	
+	@SuppressWarnings("unused")
 	private void checkVerified(User user) throws ValidationException {
 		if(user!=null && !user.isVerified())
 		{

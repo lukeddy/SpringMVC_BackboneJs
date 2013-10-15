@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import com.mwh.vi.projectmanagement.enums.UserGender;
 
 /**
- * Model Object representing an EveryLog User
+ * Model Object representing an PM User
  * 
  */
 
