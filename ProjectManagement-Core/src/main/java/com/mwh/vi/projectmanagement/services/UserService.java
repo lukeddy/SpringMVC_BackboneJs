@@ -47,7 +47,7 @@ public class UserService {
 	 * @throws MessagingException 
 	 * @throws UnsupportedEncodingException 
 	 */
-	public com.mwh.vi.projectmanagement.models.User add(User newUser) throws ValidationException,
+	public User add(User newUser) throws ValidationException,
 			DuplicateEntityException, UnsupportedEncodingException{
 		validateUser(newUser);
 		checkForDuplicate(newUser);
