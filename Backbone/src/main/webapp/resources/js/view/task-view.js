@@ -20,6 +20,7 @@ define(['backbone', 'resthub', 'view/task-form-view', 'hbs!template/task'], func
       taskFormView.render();
     },
     toggleDetails: function() {
+    	
       this.$('p').slideToggle();
     }
   });
