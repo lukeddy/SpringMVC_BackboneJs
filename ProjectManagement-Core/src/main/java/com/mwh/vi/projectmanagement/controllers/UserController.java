@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.mwh.vi.projectmanagement.dtos.UserDTO;
 import com.mwh.vi.projectmanagement.dtos.UserTokenDTO;
-import com.mwh.vi.projectmanagement.models.Result;
-import com.mwh.vi.projectmanagement.models.User;
+import com.mwh.vi.projectmanagement.models1.Result;
+import com.mwh.vi.projectmanagement.models1.User;
 import com.mwh.vi.projectmanagement.services.UserService;
 
 /**

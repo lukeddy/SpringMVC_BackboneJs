@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.mwh.vi.projectmanagement.models;
+package com.mwh.vi.projectmanagement.models1;
 
 import javax.xml.bind.annotation.XmlRootElement;
 

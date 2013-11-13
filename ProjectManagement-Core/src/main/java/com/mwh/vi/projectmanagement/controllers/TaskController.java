@@ -1,5 +1,7 @@
 package com.mwh.vi.projectmanagement.controllers;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.apache.log4j.Logger;
@@ -9,8 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.mwh.vi.projectmanagement.models.Result;
-import com.mwh.vi.projectmanagement.models.Task;
+import com.mwh.vi.projectmanagement.dtos.TaskDTO;
+import com.mwh.vi.projectmanagement.models1.Result;
+import com.mwh.vi.projectmanagement.models1.Task;
 import com.mwh.vi.projectmanagement.services.TaskService;
 
 
@@ -35,6 +38,25 @@ public class TaskController {
 		    addedTask = taskService.add(task);
 			result.setSuccess(true);
 			result.setData(addedTask);
+		} catch (Exception e) {
+			result.setSuccess(false);
+			result.setErrorString(e.getMessage());
+		}
+		
+		return result;
+	}
+	
+	@RequestMapping(value="/listAll",method = RequestMethod.GET, headers = "Accept=application/json")
+	public @ResponseBody
+	Result getAllTask() {
+		logger.debug("Received request to list all task");
+
+		Result result = new Result();
+		List<TaskDTO> taskList= null;
+		try {
+			taskList = taskService.getAllTask();
+			result.setSuccess(true);
+			result.setData(taskList);
 		} catch (Exception e) {
 			result.setSuccess(false);
 			result.setErrorString(e.getMessage());

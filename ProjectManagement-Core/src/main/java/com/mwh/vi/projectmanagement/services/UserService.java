@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 
 import com.mwh.vi.projectmanagement.dtos.UpdatedUserInfoDTO;
 import com.mwh.vi.projectmanagement.exceptions.DuplicateEntityException;
-import com.mwh.vi.projectmanagement.models.User;
+import com.mwh.vi.projectmanagement.models1.User;
 import com.mwh.vi.projectmanagement.repository.UserRepository;
 import com.mwh.vi.projectmanagement.security.TokenManager;
 

@@ -3,8 +3,8 @@ package com.mwh.vi.projectmanagement.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mwh.vi.projectmanagement.models.User;
-import com.mwh.vi.projectmanagement.models.UserToken;
+import com.mwh.vi.projectmanagement.models1.User;
+import com.mwh.vi.projectmanagement.models1.UserToken;
 import com.mwh.vi.projectmanagement.repository.UserTokenRepository;
 
 /**

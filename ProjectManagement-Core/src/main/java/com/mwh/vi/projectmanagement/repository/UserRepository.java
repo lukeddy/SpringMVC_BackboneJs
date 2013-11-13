@@ -16,7 +16,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Repository;
 
-import com.mwh.vi.projectmanagement.models.User;
+import com.mwh.vi.projectmanagement.models1.User;
 
 
 

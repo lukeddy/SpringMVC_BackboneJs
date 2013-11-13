@@ -1,4 +1,4 @@
-package com.mwh.vi.projectmanagement.models;
+package com.mwh.vi.projectmanagement.models1;
 
 import java.util.Date;
 
@@ -19,10 +19,16 @@ public class Task {
 	@Id
 	private String id;
 	private String userId;
+	private String userName;
+	private String pCode;
+	private boolean billable;
+	private String activityCode;
 	private String projectId;
 	private String phase;
 	private String hours;
 	private Date weekEndDate;
+	private String comments;
+	private boolean isValid;
 	
 	public String getId() {
 		return id;
@@ -60,12 +66,42 @@ public class Task {
 	public void setWeekEndDate(Date weekEndDate) {
 		this.weekEndDate = weekEndDate;
 	}
-	
-	
-	
-	
-	
-	
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	public String getpCode() {
+		return pCode;
+	}
+	public void setpCode(String pCode) {
+		this.pCode = pCode;
+	}
+	public boolean isBillable() {
+		return billable;
+	}
+	public void setBillable(boolean billable) {
+		this.billable = billable;
+	}
+	public String getActivityCode() {
+		return activityCode;
+	}
+	public void setActivityCode(String activityCode) {
+		this.activityCode = activityCode;
+	}
+	public String getComments() {
+		return comments;
+	}
+	public void setComments(String comments) {
+		this.comments = comments;
+	}
+	public boolean isValid() {
+		return isValid;
+	}
+	public void setValid(boolean isValid) {
+		this.isValid = isValid;
+	}
 	
 
 }

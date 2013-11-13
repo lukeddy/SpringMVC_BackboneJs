@@ -1,13 +1,17 @@
 package com.mwh.vi.projectmanagement.services;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.xml.bind.ValidationException;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.mwh.vi.projectmanagement.dtos.TaskDTO;
 import com.mwh.vi.projectmanagement.exceptions.DuplicateEntityException;
-import com.mwh.vi.projectmanagement.models.Task;
+import com.mwh.vi.projectmanagement.models1.Task;
 import com.mwh.vi.projectmanagement.repository.TaskRepository;
 
 
@@ -73,6 +77,20 @@ public class TaskService {
 						"The Task already existing in the system");
 			}
 		}
+	}
+	
+	
+	public List<TaskDTO> getAllTask(){
+		
+		List<Task> tasks =  taskRepository.findAll();
+		List<TaskDTO> taskList = new ArrayList<TaskDTO>();
+		
+		for(Task t : tasks){
+			taskList.add(new TaskDTO(t));
+			
+		}
+		
+		return taskList;
 	}
 	
 

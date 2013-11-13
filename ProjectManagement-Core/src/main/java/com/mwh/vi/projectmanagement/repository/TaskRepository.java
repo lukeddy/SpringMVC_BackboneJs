@@ -11,7 +11,7 @@ import org.apache.log4j.Logger;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.mwh.vi.projectmanagement.models.Task;
+import com.mwh.vi.projectmanagement.models1.Task;
 
 
 
@@ -50,5 +50,15 @@ public class TaskRepository {
     public List<Task> findByIds(List<String> taskIds){
     	return mongoTemplate.find(query(where("id").in(taskIds)),Task.class);
     }
+    
+    /**
+     * query to get the list of Task 
+     */
+    public List<Task> findAll(){
+    	return mongoTemplate.findAll(Task.class);
+    }
+    
+    
+   
  
 }

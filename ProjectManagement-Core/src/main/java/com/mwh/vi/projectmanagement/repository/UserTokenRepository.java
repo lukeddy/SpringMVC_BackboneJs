@@ -9,11 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.mwh.vi.projectmanagement.models.User;
-import com.mwh.vi.projectmanagement.models.UserToken;
+import com.mwh.vi.projectmanagement.models1.User;
+import com.mwh.vi.projectmanagement.models1.UserToken;
 
 import static org.springframework.data.mongodb.core.query.Criteria.where;
 import static org.springframework.data.mongodb.core.query.Query.query;
+
 import org.apache.commons.codec.binary.Base64;
 
 

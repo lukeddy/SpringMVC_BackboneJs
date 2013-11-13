@@ -4,14 +4,14 @@ import java.util.Comparator;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-import com.mwh.vi.projectmanagement.models.User;
+import com.mwh.vi.projectmanagement.models1.User;
 
 /**
  * The data transfer object to be passed over the net generally.
  * This does not have password field, and hence it's safe to use
  * as opposed to the User object.
  * 
- * @see com.mwh.vi.projectmanagement.models.User
+ * @see com.mwh.vi.projectmanagement.models1.User
  */
 @XmlRootElement
 public class UserDTO implements Comparator<UserDTO>{
